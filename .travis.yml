@@ -21,12 +21,6 @@ php:
   - hhvm
 
 
-# execute any number of scripts before the test run, custom env's are available as variables
-before_script:
-  - if [[ "$DB" == "pgsql" ]]; then psql -c "DROP DATABASE IF EXISTS hello_world_test;" -U postgres; fi
-  - if [[ "$DB" == "pgsql" ]]; then psql -c "create database hello_world_test;" -U postgres; fi
-  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS hello_world_test;" -uroot; fi
-
 # omitting "script:" will default to phpunit
 # use the $DB env variable to determine the phpunit.xml to use
 script: sh test.sh
@@ -35,3 +29,11 @@ script: sh test.sh
 notifications:
   irc: "irc.freenode.org#yourfavouriteroomfortravis"
 
+deploy:
+  edge: true
+  provider: cloudfoundry
+  username: lalithaprasad.velamuri@verizon.com
+  password: India123
+  api: https://api.run.pivotal.io
+  organization: RCSOrg
+  space: development
