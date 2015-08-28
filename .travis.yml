@@ -35,5 +35,5 @@ deploy:
   username: lalithaprasad.velamuri@verizon.com
   password: India123
   api: https://api.run.pivotal.io
-  organization: RCSOrg
+  organization: VzTechConnect
   space: development
