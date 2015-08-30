@@ -25,5 +25,6 @@ deploy:
   api: https://api.run.pivotal.io
   organization: VzTechConnect
   space: development
+  buildpack: php
   
 sudo: required
