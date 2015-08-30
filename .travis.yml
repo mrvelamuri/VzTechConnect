@@ -20,11 +20,11 @@ notifications:
 deploy:
   edge: true
   provider: cloudfoundry
+  buildpack: https://github.com/cloudfoundry/php-buildpack
   username: lalithaprasad.velamuri@verizon.com
   password: India123
   api: https://api.run.pivotal.io
   organization: VzTechConnect
   space: development
-  buildpack: php
   
 sudo: required
